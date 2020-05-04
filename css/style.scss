@@ -1,0 +1,78 @@
+@import "_common";
+// 2d5ba9
+
+header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 80px;
+    border-bottom: 1px solid #333;
+    position: fixed;
+    & h1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        font-size: 1rem;
+        color: #333;
+        & img{
+            width: 40px;
+            margin-bottom: 10px;
+        }
+    }
+    & ul{
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+        &:hover li:last-child{
+            border-right: 1px solid #333;
+        }
+        & li{
+            width: 20%;
+            &:hover{
+                background:rgba($color:#eee, $alpha: 0.3);
+            }
+            & span{
+                display: block;
+                width: 0%;
+                height: 5px;
+                background: #2d5ba9;
+                transition: .5s;
+            }
+            &:hover span{
+                width: 100%;
+            }
+            & p{
+                line-height: 80px;
+                font-weight: bold;
+                font-size: 1.1rem;
+                color: #333;
+                text-align: center;
+            }
+            & nav{
+                display: none;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                height: 0px;
+                & a{
+                    margin-bottom: 20px;
+                }
+            }
+        } 
+    }
+    & .burger{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 20px;
+        margin-top: 40px;
+        & span{
+            width: 22px;
+            height: 4px;
+            background: #333;
+        }
+    }
+}
