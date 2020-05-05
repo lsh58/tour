@@ -78,6 +78,7 @@ header {
   padding: 0 80px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   position: fixed;
+  z-index: 1000;
   background: #fff; }
   header h1 {
     display: flex;
@@ -99,7 +100,7 @@ header {
       width: 20%;
       transition: height .5s; }
       header ul li:hover {
-        background: rgba(0, 0, 0, 0.02); }
+        background: rgba(0, 0, 0, 0.03); }
       header ul li span {
         visibility: hidden;
         display: block;
@@ -140,12 +141,12 @@ header {
 
 .visual {
   width: 100%;
-  height: 1000px;
-  background: url(../img/background.jpg) no-repeat center 120%/cover; }
+  height: 850px;
+  background: url(../img/background.jpg) no-repeat center 70%/cover; }
   .visual__title {
     position: absolute;
     left: 50%;
-    top: 40%;
+    top: 35%;
     transform: translate(-50%, -50%);
     text-align: center; }
     .visual__title h2 {
@@ -164,7 +165,7 @@ header {
     background: #2d5ba9;
     position: absolute;
     left: 50%;
-    top: 55%;
+    top: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center; }
@@ -190,23 +191,181 @@ header {
       margin-left: 20px; }
       .visual__search button img {
         width: 20px; }
-  .visual__tag {
-    position: absolute;
-    left: 50%;
-    top: 63%;
-    transform: translate(-65%, -50%);
-    display: flex; }
-    .visual__tag button {
-      width: 130px;
-      height: 30px;
-      border: none;
-      outline: none;
-      background: rgba(255, 255, 255, 0.8);
-      cursor: pointer;
-      border-radius: 5px;
-      margin-left: 5px;
-      font-weight: 400;
-      font-size: 0.8rem;
-      color: #333; }
+
+.main {
+  width: 100%;
+  height: 750px;
+  background: #eee;
+  padding-top: 100px;
+  padding-left: 15%;
+  display: flex; }
+  .main__board {
+    width: 40%;
+    height: 80%;
+    background: #fff; }
+    .main__board__category {
+      width: 100%;
+      display: flex;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+      .main__board__category button {
+        border: none;
+        outline: none;
+        background: none;
+        cursor: pointer;
+        height: 50px;
+        width: 23%;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        font-weight: bold;
+        font-size: 0.9rem;
+        color: #333; }
+        .main__board__category button:last-child {
+          width: 10%;
+          background: #2d5ba9;
+          position: relative; }
+          .main__board__category button:last-child:hover {
+            background: #2d5ba9; }
+          .main__board__category button:last-child span {
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+            width: 30%;
+            height: 2px;
+            background: #fff;
+            transition: .3s; }
+            .main__board__category button:last-child span:last-child {
+              transform: translate(-50%, -50%) rotate(90deg); }
+          .main__board__category button:last-child:hover span:first-child {
+            transform: translate(-50%, -250%) rotate(45deg); }
+          .main__board__category button:last-child:hover span:last-child {
+            transform: translate(-50%, 250%) rotate(-45deg); }
+        .main__board__category button:hover {
+          background: rgba(0, 0, 0, 0.03); }
+        .main__board__category button.selected {
+          background: #2d5ba9;
+          color: #fff; }
+    .main__board__contents {
+      display: flex;
+      flex-direction: column;
+      padding-top: 15px; }
+      .main__board__contents li {
+        width: 90%;
+        margin: 12px auto;
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+        display: flex;
+        padding-bottom: 15px; }
+        .main__board__contents li span {
+          border: 1px solid #2d5ba9;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-left: 13px;
+          font-weight: 400;
+          font-size: 0.8rem;
+          color: #333; }
+    .main__board__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-left: 10px; }
+      .main__board__text h3 {
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #333;
+        margin-bottom: 5px; }
+      .main__board__text p {
+        font-weight: 100;
+        font-size: 0.9rem;
+        color: #aaa; }
+  .main__rightBox {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-left: 20px; }
+    .main__rightBox__banner {
+      width: 100%;
+      height: 50%;
+      background: url(../img/visual_1.jpg) no-repeat center/cover;
+      position: relative; }
+      .main__rightBox__banner button {
+        position: absolute;
+        bottom: 10px;
+        border: none;
+        outline: none;
+        background: none;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background: #2d5ba9;
+        border-radius: 100%; }
+        .main__rightBox__banner button:first-child {
+          left: 15px; }
+          .main__rightBox__banner button:first-child span {
+            display: block;
+            width: 12px;
+            height: 2px;
+            background: #fff; }
+            .main__rightBox__banner button:first-child span:first-child {
+              transform: translateX(2px) translateY(-150%) rotate(-45deg); }
+            .main__rightBox__banner button:first-child span:last-child {
+              transform: translateX(2px) translateY(150%) rotate(45deg); }
+        .main__rightBox__banner button:nth-of-type(2) {
+          left: 50px; }
+          .main__rightBox__banner button:nth-of-type(2) span {
+            display: block;
+            width: 15px;
+            height: 2px;
+            background: #fff;
+            transform: translateX(-2px) rotate(90deg); }
+            .main__rightBox__banner button:nth-of-type(2) span:last-child {
+              margin-left: 7px;
+              margin-top: -2px; }
+        .main__rightBox__banner button:last-child {
+          left: 85px; }
+          .main__rightBox__banner button:last-child span {
+            display: block;
+            width: 12px;
+            height: 2px;
+            background: #fff; }
+            .main__rightBox__banner button:last-child span:first-child {
+              transform: translateX(5px) translateY(-150%) rotate(45deg); }
+            .main__rightBox__banner button:last-child span:last-child {
+              transform: translateX(5px) translateY(150%) rotate(-45deg); }
+    .main__rightBox__contentWrapper {
+      width: 100%;
+      height: 27.3%;
+      margin-top: 3%;
+      display: flex; }
+      .main__rightBox__contentWrapper__contents {
+        width: 80%;
+        height: 95%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 5px; }
+        .main__rightBox__contentWrapper__contents button {
+          width: 32%;
+          height: 50%;
+          margin-right: 5px;
+          margin-bottom: 5px;
+          border: none;
+          outline: none;
+          background: #fff;
+          cursor: pointer;
+          font-weight: bold;
+          font-size: 0.9rem;
+          color: #333;
+          position: relative;
+          transition: .5s; }
+          .main__rightBox__contentWrapper__contents button:hover {
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+            margin-top: -3px; }
+      .main__rightBox__contentWrapper__news {
+        margin-top: 5px;
+        width: 20%;
+        height: 98%;
+        background: #2d5ba9; }
 
 /*# sourceMappingURL=style.css.map */
