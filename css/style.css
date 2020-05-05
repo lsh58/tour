@@ -98,7 +98,7 @@ header {
       border-right: 1px solid rgba(0, 0, 0, 0.1); }
     header ul li {
       width: 20%;
-      transition: height .5s; }
+      transition: padding .5s; }
       header ul li:hover {
         background: rgba(0, 0, 0, 0.03); }
       header ul li span {
@@ -366,6 +366,11 @@ header {
         margin-top: 5px;
         width: 20%;
         height: 98%;
-        background: #2d5ba9; }
+        background: #2d5ba9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff; }
 
 /*# sourceMappingURL=style.css.map */
