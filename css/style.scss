@@ -35,7 +35,7 @@ header{
         }
         &:hover li nav{
             display: flex;
-            height: 100px;
+            height: 130px;
         }
         & li{
             width: 20%;
@@ -115,7 +115,7 @@ header{
         }
     }
     &__search{
-        width: 42%;
+        width: 45%;
         height: 80px;
         background:#2d5ba9;
         position: absolute;
@@ -123,6 +123,7 @@ header{
         transform: translate(-50%,-50%);
         display: flex;
         align-items: center;
+        margin-top: 50px;
         & input{
             border: none;
             outline: none;
@@ -378,20 +379,23 @@ footer{
     width: 100%;
     background: #fff;
         & .banner{
-        width: 100%;
-        height: 15vh;
-        background: #fff;
+        width: 80%;
+        margin: 50px auto;
         display: flex;
         justify-content: space-around;
         & a{
             display: block;
             width: 160px;
             height: 40px;
+            transition: .5s;
             @for $i from 1 to 7{ 
                 &:nth-of-type(#{$i}){     
                   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
                   @include bg_center('../img/banner0#{$i}.jpg');
                 }
+            }
+            &:hover{
+                transform: scale(1.1);
             }
         }
     }
