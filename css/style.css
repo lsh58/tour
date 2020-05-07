@@ -93,11 +93,16 @@ header {
     justify-content: space-between;
     width: 60%; }
     header ul:hover li {
-      border-left: 1px solid rgba(0, 0, 0, 0.1); }
+      border-left: 1px solid rgba(0, 0, 0, 0.1);
+      padding-bottom: 20px; }
     header ul:hover li:last-child {
       border-right: 1px solid rgba(0, 0, 0, 0.1); }
+    header ul:hover li nav {
+      display: flex;
+      height: 130px; }
     header ul li {
       width: 20%;
+      padding-bottom: 0;
       transition: padding .5s; }
       header ul li:hover {
         background: rgba(0, 0, 0, 0.03); }
@@ -160,7 +165,7 @@ header {
       font-size: 1.55rem;
       color: #fff; }
   .visual__search {
-    width: 40%;
+    width: 45%;
     height: 80px;
     background: #2d5ba9;
     position: absolute;
@@ -168,7 +173,8 @@ header {
     top: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    align-items: center; }
+    align-items: center;
+    margin-top: 50px; }
     .visual__search input {
       border: none;
       outline: none;
@@ -361,7 +367,8 @@ header {
           transition: .5s; }
           .main__rightBox__contentWrapper__contents button:hover {
             box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-            margin-top: -3px; }
+            margin-top: -3px;
+            border: 1px solid #2d5ba9; }
       .main__rightBox__contentWrapper__news {
         margin-top: 5px;
         width: 20%;
@@ -371,7 +378,46 @@ header {
         justify-content: center;
         align-items: center;
         text-align: center;
-        color: #fff; }
+        line-height: 1.5rem;
+        color: #fff;
+        transition: .5s; }
+        .main__rightBox__contentWrapper__news:hover {
+          box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+          margin-top: -1px; }
+
+footer {
+  width: 100%;
+  background: #fff; }
+  footer .banner {
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-around; }
+    footer .banner a {
+      display: block;
+      width: 160px;
+      height: 40px;
+      transition: .5s; }
+      footer .banner a:nth-of-type(1) {
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+        background: url("../img/banner01.jpg") no-repeat center/cover; }
+      footer .banner a:nth-of-type(2) {
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+        background: url("../img/banner02.jpg") no-repeat center/cover; }
+      footer .banner a:nth-of-type(3) {
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+        background: url("../img/banner03.jpg") no-repeat center/cover; }
+      footer .banner a:nth-of-type(4) {
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+        background: url("../img/banner04.jpg") no-repeat center/cover; }
+      footer .banner a:nth-of-type(5) {
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+        background: url("../img/banner05.jpg") no-repeat center/cover; }
+      footer .banner a:nth-of-type(6) {
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+        background: url("../img/banner06.jpg") no-repeat center/cover; }
+      footer .banner a:hover {
+        transform: scale(1.1); }
 
 .gallery {
   width: 100%;

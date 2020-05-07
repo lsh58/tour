@@ -1,6 +1,8 @@
 @import "_common";
 // 2d5ba9
-
+@mixin bg_center($arg1){
+    background: url($arg1) no-repeat center / cover;
+}
 header{
     display: flex;
     justify-content: space-between;
@@ -26,12 +28,18 @@ header{
         width: 60%;
         &:hover li{
             border-left: 1px solid rgba(0,0,0,0.1);
+            padding-bottom: 20px;
         }
         &:hover li:last-child{
             border-right: 1px solid rgba(0,0,0,0.1);
         }
+        &:hover li nav{
+            display: flex;
+            height: 130px;
+        }
         & li{
             width: 20%;
+            padding-bottom: 0;
             transition: padding .5s;
             &:hover{
                 background:rgba(0,0,0,0.03);
@@ -107,7 +115,7 @@ header{
         }
     }
     &__search{
-        width: 40%;
+        width: 45%;
         height: 80px;
         background:#2d5ba9;
         position: absolute;
@@ -115,6 +123,7 @@ header{
         transform: translate(-50%,-50%);
         display: flex;
         align-items: center;
+        margin-top: 50px;
         & input{
             border: none;
             outline: none;
@@ -342,6 +351,7 @@ header{
                     &:hover{
                       box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
                       margin-top: -3px;
+                      border: 1px solid #2d5ba9;
                     }
                 }
             }
@@ -354,13 +364,39 @@ header{
                 justify-content: center;
                 align-items: center;
                 text-align: center;
+                line-height: 1.5rem;
                 color: #fff;
+                transition: .5s;
+                &:hover{
+                    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+                    margin-top: -1px;
+                }
             }
         }
     }
 }
-.gallery{
+footer{
     width: 100%;
-    height: 25vh;
     background: #fff;
+        & .banner{
+        width: 80%;
+        margin: 50px auto;
+        display: flex;
+        justify-content: space-around;
+        & a{
+            display: block;
+            width: 160px;
+            height: 40px;
+            transition: .5s;
+            @for $i from 1 to 7{ 
+                &:nth-of-type(#{$i}){     
+                  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+                  @include bg_center('../img/banner0#{$i}.jpg');
+                }
+            }
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
 }
