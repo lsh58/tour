@@ -200,7 +200,7 @@ header {
 
 .main {
   width: 100%;
-  height: 70vh;
+  height: 750px;
   background: #eee;
   padding-top: 150px;
   padding-left: 15%;
@@ -243,9 +243,9 @@ header {
             .main__board__category button:last-child span:last-child {
               transform: translate(-50%, -50%) rotate(90deg); }
           .main__board__category button:last-child:hover span:first-child {
-            transform: translate(-50%, -250%) rotate(45deg); }
+            transform: translate(-50%, -300%) rotate(45deg); }
           .main__board__category button:last-child:hover span:last-child {
-            transform: translate(-50%, 250%) rotate(-45deg); }
+            transform: translate(-50%, 300%) rotate(-45deg); }
         .main__board__category button:hover {
           background: rgba(0, 0, 0, 0.03); }
         .main__board__category button.selected {
@@ -374,30 +374,105 @@ header {
         width: 20%;
         height: 98%;
         background: #2d5ba9;
+        line-height: 1.5rem;
+        color: #fff;
+        transition: .5s;
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
-        text-align: center;
-        line-height: 1.5rem;
-        color: #fff;
-        transition: .5s; }
-        .main__rightBox__contentWrapper__news:hover {
-          box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-          margin-top: -1px; }
+        text-align: center; }
+        .main__rightBox__contentWrapper__news span:nth-of-type(1) {
+          width: 0%;
+          height: 5px;
+          background: #fff;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: .2s; }
+        .main__rightBox__contentWrapper__news span:nth-of-type(2) {
+          width: 5px;
+          height: 0;
+          background: #fff;
+          position: absolute;
+          top: 0;
+          right: 0;
+          transition: .2s;
+          transition-delay: .1s; }
+        .main__rightBox__contentWrapper__news span:nth-of-type(3) {
+          width: 0%;
+          height: 5px;
+          background: #fff;
+          position: absolute;
+          bottom: 0;
+          left: 100%;
+          transition: .2s;
+          transition-delay: .2s; }
+        .main__rightBox__contentWrapper__news span:nth-of-type(4) {
+          width: 5px;
+          height: 0;
+          background: #fff;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          transition: .2s;
+          transition-delay: .3s; }
+        .main__rightBox__contentWrapper__news:hover span:nth-of-type(1) {
+          width: 100%; }
+        .main__rightBox__contentWrapper__news:hover span:nth-of-type(2) {
+          height: 100%; }
+        .main__rightBox__contentWrapper__news:hover span:nth-of-type(3) {
+          left: 0;
+          width: 100%; }
+        .main__rightBox__contentWrapper__news:hover span:nth-of-type(4) {
+          top: 0;
+          height: 100%; }
 
-.ask {
+.event {
   width: 100%;
-  height: 40vh;
+  height: 700px;
   background: #fff;
   padding-top: 80px; }
-  .ask h3 {
+  .event h3 {
     text-align: center;
     font-size: 2rem;
     font-weight: bold; }
+  .event__content {
+    display: flex;
+    width: 70%;
+    margin: 100px auto 200px; }
+    .event__content div {
+      width: 24%;
+      height: 300px;
+      margin-left: 1%;
+      transition: .5s;
+      position: relative; }
+      .event__content div:nth-of-type(1) {
+        background: url("../img/nt001.png") no-repeat center/cover;
+        background-size: 100%; }
+      .event__content div:nth-of-type(2) {
+        background: url("../img/nt002.png") no-repeat center/cover;
+        background-size: 100%; }
+      .event__content div:nth-of-type(3) {
+        background: url("../img/nt003.png") no-repeat center/cover;
+        background-size: 100%; }
+      .event__content div:nth-of-type(4) {
+        background: url("../img/nt004.png") no-repeat center/cover;
+        background-size: 100%; }
+      .event__content div:hover {
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+        margin-top: -10px;
+        background-size: 110%; }
+      .event__content div:nth-of-type(2n) {
+        margin-top: 80px; }
+      .event__content div:nth-of-type(2n):hover {
+        margin-top: 70px; }
 
 footer {
   width: 100%;
-  background: #fff; }
+  height: 300px;
+  background: #eee;
+  padding-top: 30px; }
   footer .banner {
     width: 80%;
     margin: 50px auto;
