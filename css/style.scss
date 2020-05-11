@@ -94,7 +94,7 @@ header{
 }
 .visual {
     width: 100%;
-    height: 100vh;
+    height: 1000px;
     background: url(../img/background.jpg) no-repeat center 70% / cover;
     &__title{
         position: absolute;
@@ -102,20 +102,21 @@ header{
         transform: translate(-50%,-50%);
         text-align: center;
         & h2{
-            font-size:3.35rem;
+            font-size:4rem;
             font-weight: bold;
             color: #fff;
             margin-bottom: 30px;
-            letter-spacing: 0.02rem;
+            letter-spacing: 0.3rem;
         }
         & p{
             font-weight: 100;
             font-size:1.55rem;
+            letter-spacing: 0.3rem;
             color: #fff;
         }
     }
     &__search{
-        width: 40%;
+        width: 50%;
         height: 80px;
         background:#2d5ba9;
         position: absolute;
@@ -142,9 +143,8 @@ header{
             outline: none;
             background: none;
             cursor: pointer;
-            width: 30px;
-            height: 30px;
-            margin-left: 25px;
+            width: 100px;
+            height: 100px;
             & img{
                 width: 20px;
             }
@@ -153,11 +153,13 @@ header{
 }
 .main{
     width: 100%;
-    height: 750px;
+    height: 850px;
     background: #eee;
-    padding-top: 150px;
-    padding-left: 15%;
-    display: flex;
+    &__wrapper{
+        display: flex;
+        justify-content: center;
+        padding-top: 150px;
+    }
     &__board{
         width: 40%;
         height: 88%;
@@ -263,7 +265,7 @@ header{
         margin-left: 20px;
         &__banner{
             width: 100%;
-            height: 55%;
+            height: 400px;
             background:url(../img/visual_1.jpg) no-repeat center / cover;
             position: relative;
             & button{
@@ -349,8 +351,6 @@ header{
                     position: relative;
                     transition: .5s;
                     &:hover{
-                      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-                      margin-top: -3px;
                       border: 1px solid #2d5ba9;
                     }
                 }
@@ -449,29 +449,24 @@ header{
             }                    
             &:hover{
                 box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-                margin-top: -10px;
                 background-size: 110%;
             }
             &:nth-of-type(2n){
                 margin-top: 80px;
             }
-            &:nth-of-type(2n):hover{
-                margin-top: 70px;
-            }
-
         }
     }
 }
-footer{
+.footer{
     width: 100%;
-    height: 300px;
     background: #eee;
-    padding-top: 30px;
-        & .banner{
-        width: 80%;
-        margin: 50px auto;
+    padding-top: 50px;
+    position: relative;
+        &__banner{
+        width: 70%;
+        margin: 0 auto 50px;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         & a{
             display: block;
             width: 160px;
@@ -486,6 +481,67 @@ footer{
             &:hover{
                 transform: scale(1.1);
             }
+        }
+    }
+    &__wrapper{
+        width: 100%;
+        height: 200px;
+        padding: 50px 15% 0;
+        margin: 0 auto;
+        background: #2e373e;
+        display: flex;
+        flex-direction: column;
+        &>ul{
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            & li{
+                & a{
+                    color: #fff;
+                    font-weight: 100;
+                    font-size: 1rem;
+                    letter-spacing: 0.03rem;
+                    &:hover{
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+        &__address{
+            & p{
+                color: #fff;
+                font-weight: 100;
+                font-size: 0.9rem;
+                letter-spacing: 0.03rem;
+                line-height: 30px;
+            }
+        }
+    }
+    &__dropBox{
+        position: absolute;
+        right: 20%;
+        top: 65%;
+        &>a{
+            display: block;
+            width: 220px;
+            height: 50px;
+            padding: 0 20px;
+            color: #fff;
+            font-weight: 100;
+            font-size: 0.9rem;
+            letter-spacing: 0.03rem;
+            line-height: 30px;
+            background: #1d2327;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            & img{
+                width: 11px;
+            }
+        }
+        & ul{
+            display: none;
         }
     }
 }
