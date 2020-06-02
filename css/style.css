@@ -71,7 +71,7 @@ html.search {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch; }
 
-header {
+.header {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -80,57 +80,57 @@ header {
   position: fixed;
   z-index: 1000;
   background: #fff; }
-  header h1 {
+  .header h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
     margin-bottom: 10px; }
-    header h1 img {
+    .header h1 img {
       margin-bottom: 10px; }
-  header ul {
+  .header ul {
     display: flex;
     justify-content: space-between;
     width: 60%; }
-    header ul:hover li {
+    .header ul:hover li {
       border-left: 1px solid rgba(0, 0, 0, 0.1);
       padding-bottom: 20px; }
-    header ul:hover li:last-child {
+    .header ul:hover li:last-child {
       border-right: 1px solid rgba(0, 0, 0, 0.1); }
-    header ul:hover li nav {
+    .header ul:hover li nav {
       display: flex;
       height: 130px; }
-    header ul li {
+    .header ul li {
       width: 20%;
       padding-bottom: 0;
       transition: padding .5s; }
-      header ul li:hover {
+      .header ul li:hover {
         background: rgba(0, 0, 0, 0.03); }
-      header ul li span {
+      .header ul li span {
         visibility: hidden;
         display: block;
         width: 0%;
         height: 5px;
         background: #2d5ba9;
         transition: width .5s; }
-      header ul li:hover span {
+      .header ul li:hover span {
         visibility: visible;
         width: 100%; }
-      header ul li p {
+      .header ul li p {
         line-height: 80px;
         font-weight: bold;
         font-size: 1.1rem;
         color: #333;
         text-align: center; }
-      header ul li nav {
+      .header ul li nav {
         display: none;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
         height: 0px; }
-        header ul li nav a {
+        .header ul li nav a {
           margin-bottom: 20px; }
-  header .burger {
+  .header__burger {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -140,7 +140,7 @@ header {
     outline: none;
     background: none;
     cursor: pointer; }
-    header .burger span {
+    .header__burger span {
       width: 22px;
       height: 4px;
       background: #333; }
@@ -153,7 +153,7 @@ header {
   .visual__title {
     position: absolute;
     left: 50%;
-    top: 35%;
+    top: 50%;
     transform: translate(-50%, -50%);
     text-align: center; }
     .visual__title h2 {
@@ -161,7 +161,8 @@ header {
       font-weight: bold;
       color: #fff;
       margin-bottom: 30px;
-      letter-spacing: 0.3rem; }
+      letter-spacing: 0.3rem;
+      white-space: nowrap; }
     .visual__title p {
       font-weight: 100;
       font-size: 1.55rem;
@@ -173,7 +174,7 @@ header {
     background: #2d5ba9;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 70%;
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
@@ -430,45 +431,6 @@ header {
           transition: .2s;
           transition-delay: .3s; }
 
-.event {
-  width: 100%;
-  height: 700px;
-  background: url(../img/bg002.jpg) no-repeat center/cover;
-  background-attachment: fixed;
-  padding-top: 80px; }
-  .event h3 {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: bold;
-    color: #fff; }
-  .event__content {
-    display: flex;
-    width: 70%;
-    margin: 100px auto 200px; }
-    .event__content div {
-      width: 24%;
-      height: 300px;
-      margin-left: 1%;
-      transition: .5s;
-      position: relative; }
-      .event__content div:nth-of-type(1) {
-        background: url("../img/nt001.png") no-repeat center/cover;
-        background-size: 100%; }
-      .event__content div:nth-of-type(2) {
-        background: url("../img/nt002.png") no-repeat center/cover;
-        background-size: 100%; }
-      .event__content div:nth-of-type(3) {
-        background: url("../img/nt003.png") no-repeat center/cover;
-        background-size: 100%; }
-      .event__content div:nth-of-type(4) {
-        background: url("../img/nt004.png") no-repeat center/cover;
-        background-size: 100%; }
-      .event__content div:hover {
-        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-        background-size: 110%; }
-      .event__content div:nth-of-type(2n) {
-        margin-top: 80px; }
-
 .footer {
   width: 100%;
   background: #eee;
@@ -520,7 +482,7 @@ header {
       .footer__wrapper > ul li a {
         color: #fff;
         font-weight: 100;
-        font-size: 1rem;
+        font-size: 0.9rem;
         letter-spacing: 0.03rem; }
         .footer__wrapper > ul li a:hover {
           font-weight: 400; }
