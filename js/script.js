@@ -1,9 +1,14 @@
 
 $(function () {
 
-    // $('.header__burger').click(function(){
-    //     $('header ul li nav').animate({
-    //         height:'130px'
-    //     },500);
-    // });
+    $('.header__burger').click(function () {
+        $('.popMenu').css({
+            top: 0
+        });
+    });
+    $('.popMenu__burger').click(function () {
+        $('.popMenu').css({
+            top: '-100vh'
+        });
+    });
 });

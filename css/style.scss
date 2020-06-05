@@ -3,6 +3,73 @@
 @mixin bg_center($arg1){
     background: url($arg1) no-repeat center / cover;
 }
+.popMenu{
+    position: fixed;
+    top: -100vh;left: 0;
+    z-index: 2000;
+    width: 100%;
+    height: 100vh;
+    background: #fefefe;
+    transition: top 1s cubic-bezier(0.22, 1, 0.36, 1);
+    & ul{
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+        margin: 10% auto 0;
+        & li{
+            width: 20%;
+            padding-bottom: 0;
+            transition: padding .5s;
+            padding-bottom: 20px;
+            & p{
+                line-height: 80px;
+                font-weight: bold;
+                font-size: 1.5rem;
+                color: #333;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            & nav{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                & a{
+                    font-size: 1.2rem;
+                    margin-bottom: 50px;
+                }
+            }
+        } 
+    }
+    &__burger{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 20px;
+        margin-top: 40px;
+        border: none;
+        outline: none;
+        background: none;
+        position: absolute;
+        top:0; right:4%;
+        cursor:pointer;
+        & span{
+            width: 22px;
+            height: 4px;
+            background: #333;
+            transition: .5s;
+            &:nth-of-type(1){
+                transform: rotate(45deg) translateY(10px);
+            }
+            &:nth-of-type(2){
+                opacity: 0;
+            }
+            &:nth-of-type(3){
+                transform: rotate(-45deg) translateY(-10px);
+            }
+        }
+    }
+}
 .header{
     display: flex;
     flex-direction: row;
@@ -91,6 +158,7 @@
             width: 22px;
             height: 4px;
             background: #333;
+            transition: .5s;
         }
     }
 }
@@ -109,7 +177,7 @@
             font-weight: bold;
             color: #fff;
             margin-bottom: 30px;
-            letter-spacing: 0.3rem;
+            letter-spacing: 0.05rem;
             white-space: nowrap;
             word-break: keep-all;
         }
@@ -117,12 +185,12 @@
             display: inline;
             font-weight: 100;
             font-size:1.55rem;
-            letter-spacing: 0.3rem;
+            letter-spacing: 0.05rem;
             color: #fff;
         }
     }
     &__search{
-        width: 50%;
+        width: 45%;
         height: 80px;
         background:#2d5ba9;
         position: absolute;
@@ -136,7 +204,7 @@
             outline: none;
             background: #fff;
             width: 88%;
-            height: 83%;
+            height: 78%;
             margin-left: 1%;
             padding: 15px;
             font-weight: 100;
@@ -207,12 +275,6 @@
                             transform: translate(-50%,-50%) rotate(90deg);
                         }
                     }
-                    &:hover span:first-child{
-                        transform: translate(-50%,-350%) rotate(45deg);
-                    }
-                    &:hover span:last-child{
-                        transform: translate(-50%,350%) rotate(-45deg);
-                    }
                 }
                 &:hover {
                     background: rgba(0,0,0,0.03);
@@ -265,7 +327,6 @@
             }
         }
     }
-
     &__rightBox{
         display: flex;
         flex-direction: column;
@@ -440,6 +501,7 @@
         width: 70%;
         margin: 0 auto 50px;
         display: flex;
+        flex-wrap: nowrap;
         justify-content: space-between;
         & a{
             display: block;
@@ -469,6 +531,7 @@
             width: 60%;
             display: flex;
             justify-content: space-between;
+            flex-wrap: nowrap;
             margin-bottom: 50px;
             & li{
                 & a{
@@ -547,6 +610,73 @@
 
 }
 @media all and (max-width:768px) { 
+    .popMenu{
+        position: fixed;
+        top: -100vh;left: 0;
+        z-index: 2000;
+        width: 100%;
+        height: 100vh;
+        background: #fefefe;
+        transition: top 1s cubic-bezier(0.22, 1, 0.36, 1);
+        & ul{
+            display: flex;
+            justify-content: space-between;
+            width: 60%;
+            margin: 10% auto 0;
+            & li{
+                width: 20%;
+                padding-bottom: 0;
+                transition: padding .5s;
+                padding-bottom: 20px;
+                & p{
+                    line-height: 80px;
+                    font-weight: bold;
+                    font-size: 1.5rem;
+                    color: #333;
+                    text-align: center;
+                    margin-bottom: 30px;
+                }
+                & nav{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    & a{
+                        font-size: 1.2rem;
+                        margin-bottom: 50px;
+                    }
+                }
+            } 
+        }
+        &__burger{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 20px;
+            margin-top: 25px;
+            border: none;
+            outline: none;
+            background: none;
+            position: absolute;
+            top:0; right:86%;
+            cursor:pointer;
+            & span{
+                width: 22px;
+                height: 4px;
+                background: #333;
+                transition: .5s;
+                &:nth-of-type(1){
+                    transform: rotate(45deg) translateY(10px);
+                }
+                &:nth-of-type(2){
+                    opacity: 0;
+                }
+                &:nth-of-type(3){
+                    transform: rotate(-45deg) translateY(-10px);
+                }
+            }
+        }
+    }
     .header{
         display: flex;
         flex-direction: row-reverse;
@@ -650,8 +780,8 @@
             transform: translate(-50%,-50%);
             text-align: center;
             & h2{
-                width:400px;
-                font-size:4rem;
+                width:300px;
+                font-size:3.5rem;
                 font-weight: bold;
                 color: #fff;
                 margin-bottom: 30px;
@@ -705,7 +835,7 @@
     }
     .main{
         width: 100%;
-        height: 850px;
+        height: 900px;
         background: #eee;
         &__wrapper{
             display: flex;
@@ -753,12 +883,6 @@
                                 transform: translate(-50%,-50%) rotate(90deg);
                             }
                         }
-                        &:hover span:first-child{
-                            transform: translate(-50%,-350%) rotate(45deg);
-                        }
-                        &:hover span:last-child{
-                            transform: translate(-50%,350%) rotate(-45deg);
-                        }
                     }
                     &:hover {
                         background: rgba(0,0,0,0.03);
@@ -788,7 +912,7 @@
                         align-items: center;
                         padding-left: 6px;
                         font-weight: 400;
-                        font-size: 0.8rem;
+                        font-size: 0.7rem;
                         color: #2d5ba9;
                     }
                 }
@@ -800,7 +924,7 @@
                 margin-left: 10px;
                 & h3{
                     font-weight: bold;
-                    font-size: 1.1rem;
+                    font-size: 1rem;
                     color: #333;
                     margin-bottom: 5px;
                 }
@@ -813,13 +937,14 @@
         }
     
         &__rightBox{
+            margin-top: 10px;
             display: flex;
             flex-direction: column;
-            width: 35%;
+            width: 90%;
             margin-left: 20px;
             &__banner{
                 width: 100%;
-                height: 400px;
+                height: 200px;
                 background:url(../img/visual_1.jpg) no-repeat center / cover;
                 position: relative;
                 & button{
@@ -892,8 +1017,8 @@
                     flex-wrap: wrap;
                     margin-top: 5px;
                     & button{
-                        width: 32%;
-                        height: 50%;
+                        width: 31.5%;
+                        height: 50px;
                         margin-right: 5px;
                         margin-bottom: 5px;
                         border: none;
@@ -901,7 +1026,7 @@
                         background: #fff;
                         cursor: pointer;  
                         font-weight: bold;
-                        font-size: 0.9rem;
+                        font-size: 0.8rem;
                         color: #333;
                         position: relative;
                         transition: .5s;
@@ -913,7 +1038,7 @@
                 &__news{
                     margin-top: 5px;
                     width: 20%;
-                    height: 98%;
+                    height: 105px;
                     background: #2d5ba9;
                     line-height: 1.5rem;
                     color: #fff;
@@ -980,21 +1105,23 @@
     .footer{
         width: 100%;
         background: #eee;
-        padding-top: 50px;
+        padding-top: 20px;
         position: relative;
             &__banner{
-            width: 70%;
-            margin: 0 auto 50px;
+            width: 90%;
+            margin: 0 auto 10px;
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
             & a{
                 display: block;
-                width: 160px;
-                height: 40px;
+                width: 110px;
+                height: 30px;
                 transition: .5s;
+                margin-bottom: 10px;
                 @for $i from 1 to 7{ 
                     &:nth-of-type(#{$i}){     
-                      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+                      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
                       @include bg_center('../img/banner0#{$i}.jpg');
                     }
                 }
@@ -1005,23 +1132,27 @@
         }
         &__wrapper{
             width: 100%;
-            height: 200px;
-            padding: 50px 15% 0;
+            height: 150px;
+            padding: 0;
             margin: 0 auto;
             background: #2e373e;
             display: flex;
             flex-direction: column;
             &>ul{
-                width: 60%;
+                width: 90%;
+                margin:10px auto;
                 display: flex;
-                justify-content: space-between;
-                margin-bottom: 50px;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                margin-bottom: 10px;
                 & li{
+                    margin-bottom: 10px;
                     & a{
                         color: #fff;
                         font-weight: 100;
-                        font-size: 0.9rem;
+                        font-size: 0.8rem;
                         letter-spacing: 0.03rem;
+                        margin-right: 10px;
                         &:hover{
                             font-weight: 400;
                         }
@@ -1029,12 +1160,14 @@
                 }
             }
             &__address{
+                width: 90%;
+                margin: 0 auto;
                 & p{
                     color: #fff;
                     font-weight: 100;
-                    font-size: 0.9rem;
+                    font-size: 0.7rem;
                     letter-spacing: 0.03rem;
-                    line-height: 30px;
+                    line-height: 20px;
                 }
             }
         }
@@ -1042,7 +1175,7 @@
             position: absolute;
             right: 15%;
             top: 10%;
-            display: flex;
+            display: none;
             flex-direction: column;
             &:hover ul{
                 visibility: visible;
@@ -1087,5 +1220,4 @@
             }
         }
     }
-    
 }
