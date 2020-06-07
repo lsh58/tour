@@ -3,6 +3,11 @@
 @mixin bg_center($arg1){
     background: url($arg1) no-repeat center / cover;
 }
+@mixin button_reset(){
+    border: none;
+    background: none;
+    outline:none;
+}
 .popMenu{
     position: fixed;
     top: -100vh;left: 0;
@@ -491,48 +496,48 @@
         }
     }
 }
-
-.footer{
+.banner{
     width: 100%;
     background: #eee;
-    padding-top: 50px;
-    position: relative;
-        &__banner{
-        width: 70%;
-        margin: 0 auto 50px;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        & a{
-            display: block;
-            width: 160px;
-            height: 40px;
-            transition: .5s;
-            @for $i from 1 to 7{ 
-                &:nth-of-type(#{$i}){     
-                  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-                  @include bg_center('../img/banner0#{$i}.jpg');
-                }
-            }
-            &:hover{
-                transform: scale(1.1);
+    padding: 0 14.5% 50px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    & a{
+        display: block;
+        width: 160px;
+        height: 40px;
+        transition: .5s;
+        @for $i from 1 to 7{ 
+            &:nth-of-type(#{$i}){     
+              box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+              @include bg_center('../img/banner0#{$i}.jpg');
             }
         }
+        &:hover{
+            transform: scale(1.1);
+        }
     }
+}
+.footer{
+    width: 100%;
+    background: #2e373e;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: 50px 14.5% 50px;
     &__wrapper{
-        width: 100%;
-        height: 200px;
-        padding: 50px 15% 0;
-        margin: 0 auto;
+        width: 80%;
         background: #2e373e;
         display: flex;
         flex-direction: column;
         &>ul{
-            width: 60%;
+            width: 80%;
             display: flex;
             justify-content: space-between;
             flex-wrap: nowrap;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             & li{
                 & a{
                     color: #fff;
@@ -546,6 +551,7 @@
             }
         }
         &__address{
+            width: 80%;
             & p{
                 color: #fff;
                 font-weight: 100;
@@ -556,25 +562,19 @@
         }
     }
     &__dropBox{
-        position: absolute;
-        right: 15%;
-        top: 10%;
         display: flex;
         flex-direction: column;
-        &:hover ul{
-            visibility: visible;
-        }
+        position: relative;
         & ul{
+            position: absolute;
+            top:0; left: 0;
             width: 220px;
             background: #1d2327;
-            // border: 1px solid rgba(255,255,255,0.4);
-            visibility: hidden;
             & li{
                 border-bottom: 1px solid rgba(255,255,255,0.2);
                 & a{
                     display: block;
                     width: 100%;
-                    height: 100%;
                     color:#fff;
                     font-weight: 100;
                     font-size: 0.9rem;
@@ -585,9 +585,10 @@
             }
 
         }
-        &>a{
+        &>button{
+            @include button_reset;
             width: 220px;
-            height: 50px;
+            height: 40px;
             padding: 0 20px;
             color: #fff;
             font-weight: 100;
@@ -1101,123 +1102,123 @@
             }
         }
     }
-    
-    .footer{
-        width: 100%;
-        background: #eee;
-        padding-top: 20px;
-        position: relative;
-            &__banner{
-            width: 90%;
-            margin: 0 auto 10px;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            & a{
-                display: block;
-                width: 110px;
-                height: 30px;
-                transition: .5s;
-                margin-bottom: 10px;
-                @for $i from 1 to 7{ 
-                    &:nth-of-type(#{$i}){     
-                      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-                      @include bg_center('../img/banner0#{$i}.jpg');
-                    }
-                }
-                &:hover{
-                    transform: scale(1.1);
+    .banner{
+        width: 90%;
+        margin: 0 auto;
+        padding: 0 15%;
+        display: none;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        & a{
+            display: block;
+            width: 110px;
+            height: 30px;
+            transition: .5s;
+            margin-bottom: 10px;
+            @for $i from 1 to 7{ 
+                &:nth-of-type(#{$i}){     
+                  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+                  @include bg_center('../img/banner0#{$i}.jpg');
                 }
             }
-        }
-        &__wrapper{
-            width: 100%;
-            height: 150px;
-            padding: 0;
-            margin: 0 auto;
-            background: #2e373e;
-            display: flex;
-            flex-direction: column;
-            &>ul{
-                width: 90%;
-                margin:10px auto;
-                display: flex;
-                justify-content: space-around;
-                flex-wrap: wrap;
-                margin-bottom: 10px;
-                & li{
-                    margin-bottom: 10px;
-                    & a{
-                        color: #fff;
-                        font-weight: 100;
-                        font-size: 0.8rem;
-                        letter-spacing: 0.03rem;
-                        margin-right: 10px;
-                        &:hover{
-                            font-weight: 400;
-                        }
-                    }
-                }
-            }
-            &__address{
-                width: 90%;
-                margin: 0 auto;
-                & p{
-                    color: #fff;
-                    font-weight: 100;
-                    font-size: 0.7rem;
-                    letter-spacing: 0.03rem;
-                    line-height: 20px;
-                }
-            }
-        }
-        &__dropBox{
-            position: absolute;
-            right: 15%;
-            top: 10%;
-            display: none;
-            flex-direction: column;
-            &:hover ul{
-                visibility: visible;
-            }
-            & ul{
-                width: 220px;
-                background: #1d2327;
-                // border: 1px solid rgba(255,255,255,0.4);
-                visibility: hidden;
-                & li{
-                    border-bottom: 1px solid rgba(255,255,255,0.2);
-                    & a{
-                        display: block;
-                        width: 100%;
-                        height: 100%;
-                        color:#fff;
-                        font-weight: 100;
-                        font-size: 0.9rem;
-                        letter-spacing: 0.03rem;
-                        line-height: 30px;
-                        padding-left: 10px;
-                    }
-                }
-    
-            }
-            &>a{
-                width: 220px;
-                height: 50px;
-                padding: 0 20px;
-                color: #fff;
-                font-weight: 100;
-                font-size: 0.9rem;
-                letter-spacing: 0.03rem;
-                line-height: 30px;
-                background: #1d2327;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                & img{
-                    width: 11px;
-                }
+            &:hover{
+                transform: scale(1.1);
             }
         }
     }
+    // .footer{
+    //     width: 100%;
+    //     background: #eee;
+    //     padding-top: 20px;
+    //     position: relative;
+    //     &__wrapper{
+    //         width: 100%;
+    //         height: 150px;
+    //         padding: 0;
+    //         margin: 0 auto;
+    //         background: #2e373e;
+    //         display: flex;
+    //         flex-direction: column;
+    //         &>ul{
+    //             width: 90%;
+    //             margin:10px auto;
+    //             display: flex;
+    //             justify-content: space-around;
+    //             flex-wrap: wrap;
+    //             margin-bottom: 10px;
+    //             & li{
+    //                 margin-bottom: 10px;
+    //                 & a{
+    //                     color: #fff;
+    //                     font-weight: 100;
+    //                     font-size: 0.8rem;
+    //                     letter-spacing: 0.03rem;
+    //                     margin-right: 10px;
+    //                     &:hover{
+    //                         font-weight: 400;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //         &__address{
+    //             width: 90%;
+    //             margin: 0 auto;
+    //             & p{
+    //                 color: #fff;
+    //                 font-weight: 100;
+    //                 font-size: 0.7rem;
+    //                 letter-spacing: 0.03rem;
+    //                 line-height: 20px;
+    //             }
+    //         }
+    //     }
+    //     &__dropBox{
+    //         position: absolute;
+    //         right: 15%;
+    //         top: 10%;
+    //         display: none;
+    //         flex-direction: column;
+    //         &:hover ul{
+    //             visibility: visible;
+    //         }
+    //         & ul{
+    //             width: 220px;
+    //             background: #1d2327;
+    //             // border: 1px solid rgba(255,255,255,0.4);
+    //             visibility: hidden;
+    //             & li{
+    //                 border-bottom: 1px solid rgba(255,255,255,0.2);
+    //                 & a{
+    //                     display: block;
+    //                     width: 100%;
+    //                     height: 100%;
+    //                     color:#fff;
+    //                     font-weight: 100;
+    //                     font-size: 0.9rem;
+    //                     letter-spacing: 0.03rem;
+    //                     line-height: 30px;
+    //                     padding-left: 10px;
+    //                 }
+    //             }
+    
+    //         }
+    //         &>a{
+    //             width: 220px;
+    //             height: 50px;
+    //             padding: 0 20px;
+    //             color: #fff;
+    //             font-weight: 100;
+    //             font-size: 0.9rem;
+    //             letter-spacing: 0.03rem;
+    //             line-height: 30px;
+    //             background: #1d2327;
+    //             display: flex;
+    //             justify-content: space-between;
+    //             align-items: center;
+    //             & img{
+    //                 width: 11px;
+    //             }
+    //         }
+    //     }
+    // }
 }
