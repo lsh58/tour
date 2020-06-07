@@ -208,7 +208,7 @@ html.search {
 
 .visual {
   width: 100%;
-  height: 1000px;
+  height: 100vh;
   background: url(../img/background.jpg) no-repeat center 100%/cover;
   background-attachment: fixed; }
   .visual__title {
