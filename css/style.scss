@@ -201,7 +201,7 @@ h1{
 }
 .main{
     width: 100%;
-    height: 850px;
+    height: 100vh;
     background: #eee;
     &__wrapper{
         display: flex;
@@ -309,10 +309,11 @@ h1{
         &__banner{
             width: 100%;
             height: 400px;
-            background:url(../img/visual_1.jpg) no-repeat center / cover;
             position: relative;
+            overflow: hidden;
             & button{
                 position: absolute;
+                z-index: 100;
                 bottom: 10px; 
                 border: none;
                 outline: none;
@@ -352,7 +353,7 @@ h1{
                         }
                     }
                 }
-                &:last-child{
+                &:nth-of-type(3){
                     left: 85px;
                     & span{
                         display: block;
@@ -365,6 +366,30 @@ h1{
                         &:last-child{
                             transform: translateX(5px) translateY(150%) rotate(-45deg);
                         }
+                    }
+                }
+            }
+            & ul{
+                width: 400%;
+                height: 100%;
+                position: absolute;
+                z-index: 10;
+                top:0; left:0;
+                display: flex;
+                & li{
+                    width: 100%;
+                    height: 100%;
+                    &:nth-of-type(1){
+                        background:url(../img/visual_1.jpg) no-repeat center / cover;
+                    }
+                    &:nth-of-type(2){
+                        background:url(../img/visual_2.jpg) no-repeat center / cover;
+                    }
+                    &:nth-of-type(3){
+                        background:url(../img/visual_3.jpg) no-repeat center / cover;
+                    }
+                    &:nth-of-type(4){
+                        background:url(../img/visual_4.jpg) no-repeat center / cover;
                     }
                 }
             }
@@ -495,7 +520,7 @@ h1{
     position: relative;
     display: flex;
     align-items: flex-start;
-    padding: 50px 14.5% 50px;
+    padding: 30px 14.5% 20px;
     &__wrapper{
         width: 80%;
         background: #2e373e;
@@ -506,7 +531,7 @@ h1{
             display: flex;
             justify-content: space-between;
             flex-wrap: nowrap;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             & li{
                 & a{
                     color: #fff;
