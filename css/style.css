@@ -71,11 +71,36 @@ html.search {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch; }
 
+h1 {
+  position: fixed;
+  top: 10px;
+  left: 5%;
+  z-index: 900; }
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  border: none;
+  outline: none;
+  background: none;
+  position: fixed;
+  top: 30px;
+  right: 5%;
+  z-index: 2000;
+  cursor: pointer; }
+  .burger span {
+    width: 22px;
+    height: 4px;
+    background: #333;
+    transition: .5s; }
+
 .popMenu {
   position: fixed;
   top: -100vh;
   left: 0;
-  z-index: 2000;
+  z-index: 1000;
   width: 100%;
   height: 100vh;
   background: #fefefe;
@@ -105,49 +130,16 @@ html.search {
         .popMenu ul li nav a {
           font-size: 1.2rem;
           margin-bottom: 50px; }
-  .popMenu__burger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 20px;
-    margin-top: 40px;
-    border: none;
-    outline: none;
-    background: none;
-    position: absolute;
-    top: 0;
-    right: 4%;
-    cursor: pointer; }
-    .popMenu__burger span {
-      width: 22px;
-      height: 4px;
-      background: #333;
-      transition: .5s; }
-      .popMenu__burger span:nth-of-type(1) {
-        transform: rotate(45deg) translateY(10px); }
-      .popMenu__burger span:nth-of-type(2) {
-        opacity: 0; }
-      .popMenu__burger span:nth-of-type(3) {
-        transform: rotate(-45deg) translateY(-10px); }
 
 .header {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   padding: 0 80px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   position: fixed;
-  z-index: 1000;
+  z-index: 800;
   background: #fff; }
-  .header h1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 10px; }
-    .header h1 img {
-      margin-bottom: 10px; }
   .header ul {
     display: flex;
     justify-content: space-between;
@@ -190,21 +182,6 @@ html.search {
         height: 0px; }
         .header ul li nav a {
           margin-bottom: 20px; }
-  .header__burger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 20px;
-    margin-top: 40px;
-    border: none;
-    outline: none;
-    background: none;
-    cursor: pointer; }
-    .header__burger span {
-      width: 22px;
-      height: 4px;
-      background: #333;
-      transition: .5s; }
 
 .visual {
   width: 100%;
@@ -246,9 +223,9 @@ html.search {
       border: none;
       outline: none;
       background: #fff;
-      width: 88%;
+      width: 86%;
       height: 78%;
-      margin-left: 1%;
+      margin-left: 1.3%;
       padding: 15px;
       font-weight: 100;
       font-size: 1rem;
@@ -563,30 +540,32 @@ html.search {
     display: flex;
     flex-direction: column;
     position: relative; }
-    .footer__dropBox ul {
+    .footer__dropBox ul li {
+      width: 220px;
+      background: #1d2327;
       position: absolute;
       top: 0;
       left: 0;
-      width: 220px;
-      background: #1d2327; }
-      .footer__dropBox ul li {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
-        .footer__dropBox ul li a {
-          display: block;
-          width: 100%;
-          color: #fff;
-          font-weight: 100;
-          font-size: 0.9rem;
-          letter-spacing: 0.03rem;
-          line-height: 30px;
-          padding-left: 10px; }
+      z-index: 100;
+      height: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: top .5s ease-in-out; }
+      .footer__dropBox ul li a {
+        display: block;
+        width: 100%;
+        color: #fff;
+        font-weight: 100;
+        font-size: 0.9rem;
+        letter-spacing: 0.03rem;
+        line-height: 40px;
+        padding-left: 10px; }
     .footer__dropBox > button {
       border: none;
       background: none;
       outline: none;
       width: 220px;
       height: 40px;
-      padding: 0 20px;
+      padding: 0 10px;
       color: #fff;
       font-weight: 100;
       font-size: 0.9rem;
@@ -595,7 +574,9 @@ html.search {
       background: #1d2327;
       display: flex;
       justify-content: space-between;
-      align-items: center; }
+      align-items: center;
+      position: absolute;
+      z-index: 101; }
       .footer__dropBox > button img {
         width: 11px; }
 
