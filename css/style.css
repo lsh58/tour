@@ -186,7 +186,7 @@ h1 {
 
 .visual {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   background: url(../img/background.jpg) no-repeat center 100%/cover;
   background-attachment: fixed; }
   .visual__title {
@@ -244,7 +244,7 @@ h1 {
 
 .main {
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   background: #eee; }
   .main__wrapper {
     display: flex;
