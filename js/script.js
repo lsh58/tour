@@ -5,10 +5,14 @@ $(function () {
     dropBox(); //드롭박스 열고닫기
     header(); //헤더 열고닫기
     rightBox();//배너슬라이드
-    $('.main__board__category button').click(function(){
-        $('.main__board__category button').removeClass('selected');
-        $(this).addClass('selected');
+    $('.main__board__move').click(function(){
+        var movepage = $('.main__board__category .selected').attr("data-page");
+        console.log(movepage);
     })
+    $('.main__board__category .page').click(function(){
+        $('.main__board__category .page').removeClass('selected');
+        $(this).addClass('selected');
+    });
 });
 
 function burger(){ //버거메뉴 열고닫기

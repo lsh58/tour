@@ -210,7 +210,7 @@ h1 {
       letter-spacing: 0.05rem;
       color: #fff; }
   .visual__search {
-    width: 45%;
+    width: 700px;
     height: 80px;
     background: #2d5ba9;
     position: absolute;
@@ -270,7 +270,10 @@ h1 {
         border-right: 1px solid rgba(0, 0, 0, 0.1);
         font-weight: bold;
         font-size: 0.9rem;
-        color: #333; }
+        color: #333;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
         .main__board__category button:last-child {
           width: 10%;
           background: #2d5ba9;
@@ -305,17 +308,19 @@ h1 {
         display: flex;
         padding-bottom: 15px; }
         .main__board__contents li span {
-          border: 1px solid #2d5ba9;
-          width: 50px;
-          height: 50px;
+          flex: 0 0 auto;
           display: flex;
           justify-content: center;
           align-items: center;
+          border: 1px solid #2d5ba9;
+          width: 50px;
+          height: 50px;
           padding-left: 13px;
           font-weight: 400;
           font-size: 0.8rem;
           color: #2d5ba9; }
     .main__board__text {
+      width: 85%;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -324,7 +329,10 @@ h1 {
         font-weight: bold;
         font-size: 1.1rem;
         color: #333;
-        margin-bottom: 5px; }
+        margin-bottom: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
       .main__board__text p {
         font-weight: 100;
         font-size: 0.9rem;
@@ -414,7 +422,7 @@ h1 {
         flex-wrap: wrap;
         margin-top: 5px; }
         .main__rightBox__contentWrapper__contents button {
-          width: 32%;
+          width: 31%;
           height: 50%;
           margin-right: 5px;
           margin-bottom: 5px;
@@ -498,10 +506,13 @@ h1 {
   flex-wrap: nowrap;
   justify-content: space-between; }
   .banner a {
+    margin-left: 10px;
     display: block;
     width: 160px;
     height: 40px;
     transition: .5s; }
+    .banner a:nth-of-type(1) {
+      margin-left: 0; }
     .banner a:nth-of-type(1) {
       box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
       background: url("../img/banner01.jpg") no-repeat center/cover; }
@@ -545,7 +556,11 @@ h1 {
         color: #fff;
         font-weight: 100;
         font-size: 0.9rem;
-        letter-spacing: 0.03rem; }
+        letter-spacing: 0.03rem;
+        margin-left: 10px;
+        white-space: nowrap; }
+        .footer__wrapper > ul li a:nth-of-type(1) {
+          margin-left: 0; }
         .footer__wrapper > ul li a:hover {
           font-weight: 400; }
     .footer__wrapper__address {
